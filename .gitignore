@@ -1,0 +1,23 @@
+Dependency directories
+
+venv/
+pycache/
+
+Compiled artifacts
+
+*.pyc
+
+Data & Model Files
+
+CRITICAL: Ignore all raw data files and temporary model dumps
+
+car_adverts.csv
+*.csv
+*.xlsx
+*.parquet
+model_test_data.csv
+model_pipeline.pkl
+
+Jupyter/iPython Notebooks
+
+.ipynb_checkpoints
