@@ -1,23 +1,43 @@
-Dependency directories
-
-venv/
-pycache/
-
-Compiled artifacts
-
+# ------------------------
+# PYTHON / BUILD ARTIFACTS
+# ------------------------
+__pycache__/
 *.pyc
+*.pyo
 
-Data & Model Files
+# ------------------------
+# VENV
+# ------------------------
+venv/
+env/
 
-CRITICAL: Ignore all raw data files and temporary model dumps
-
-car_adverts.csv
+# ------------------------
+# DATA FILES (IMPORTANT!)
+# ------------------------
 *.csv
 *.xlsx
 *.parquet
-model_test_data.csv
-model_pipeline.pkl
 
-Jupyter/iPython Notebooks
+# keep placeholders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
 
-.ipynb_checkpoints
+# ------------------------
+# MODEL ARTIFACTS
+# ------------------------
+*.pkl
+*.joblib
+
+# keep models folder
+!models/.gitkeep
+
+# ------------------------
+# JUPYTER
+# ------------------------
+.ipynb_checkpoints/
+
+# ------------------------
+# OS / MISC
+# ------------------------
+.DS_Store
+Thumbs.db
