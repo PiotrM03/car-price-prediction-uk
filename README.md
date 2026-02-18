@@ -1,17 +1,45 @@
-Car Price Predictor (UK)
+# 🚗 Car Price Predictor (UK Market)
 
-This project is a machine learning application designed to predict the price of used cars in the UK market.
+- A machine learning web application that predicts the price of used cars in the UK based on vehicle characteristics such as make, model, body type, transmission type, fuel type, engine volume, engine size, mileage and car age.
+- The project demonstrates an end-to-end ML workflow including data preprocessing, model training, testing, optimising and evaluation, pipeline construction and deployment via a Flask web interface.
 
-Project Structure
+## 🎯 Problem Statement
 
-app.py: The core Flask application that serves the model.
+Pricing used cars accurately is essential for both dealerships and private sellers. The objective of this project is to:
+- Predict vehicle prices using structured tabular data
+- Compare multiple regression models (e.g., linear regression, XGBoost)
+- Build a production-ready, reproducible machine learning pipeline
+- Deploy the trained model as a user-friendly and intuitive web application
 
-requirements.txt: List of all Python dependencies.
+## 📊 Dataset
 
-notebooks/: Contains all exploratory data analysis (EDA) and model training work (model_training.ipynb).
+The original dataset is publicly available on Kaggle ([**here**](https://www.kaggle.com/datasets/guanhaopeng/uk-used-car-market)), it consists of web-scraped UK used car listings with features describing the car, the listing and the car seller's information.
 
-static/: Contains static assets (CSS, JS).
+### Key Preprocessing Steps
+- Dataset cleaning (dropping unnecessary columns, filling missing values, removing outliers etc.)
+- Feature engineering (e.g., combining registration year with reg to extract as many combinations of legitimate rows as possible) 
+- Handling categorical encoding
+- Feature scaling
+- Train/test split with proper validation
+- Pipeline-based transformation to prevent data leakage between train and test sets
 
-templates/: Contains HTML files (index.html).
+## 🧠 Modeling Approach
 
-model_pipeline.pkl: The final saved Scikit-learn Pipeline used for predictions.
+The following regression models were trained, optimised and evaluted:
+- Linear Regresssion (baseline model)
+- XGBoost
+
+Model performance was evaluated using metrics such as:
+- **R² Score** to measure how well the model fits the data compared to a naive mean model
+- **Mean Absolute Error (MAE)** represents average error, providing an easily interpretable average GBP error
+- **Mean Absolute Percentage Error (MAPE)** providing a scale-independent metric showing average percentage difference between predicted and actual prices (e.g., "model is off by 10% on average")
+- **Root Mean Squared Error (RMSE)** showing average magnitude of error in original units (GBP)
+
+All preprocessing and modeling steps were combined into a single scikit-learn pipeline, ensuring reproducibility and preventing data leakage.
+The final trained pipeline using XGBoost was saved as **model_pipeline.pkl**
+
+## 🌐 Web Application
+
+- The trained model is deployed using Flask.
+- Users can input vehicle details via a web interface and receive an instant price prediction.
+
