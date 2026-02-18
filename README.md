@@ -41,22 +41,22 @@ The final trained pipeline using XGBoost was saved as **model_pipeline.pkl**
 ## 🖥️ System Architecture
 ![Architecture Diagram](images/architecture_diagram.png)
 
-**1. User Input via Web App**
+**1. User Input via Web App**:
 User submits car characteristics and attributes through an HTML form.
 
-**2. API Request via Flask**
+**2. API Request via Flask**:
 Flask recieves POST request and extracts input features as a JSON.
 
-**3. Preprocessing Pipeline (scaling + encoding)**
+**3. Preprocessing Pipeline (scaling + encoding)**:
 Categorical variables are encoded and numerical features are imputed + scaled using the preprocessing pipeline.
 
-**4. Model Inference (model_pipeline.pkl)**
+**4. Model Inference (model_pipeline.pkl)**:
 The trained XGBoost regression model generates a price prediction.
 
-**5. Post-processing**
+**5. Post-processing**:
 The prediction is formatted as GBP currency and rounded for display.
 
-**6. Output via Web App**
+**6. Output via Web App**:
 Final predicted price is returned to the user via the HTML template.
 
 ## 🌐 Web Application
