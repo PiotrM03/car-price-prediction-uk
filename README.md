@@ -67,6 +67,8 @@ Final predicted price is returned to the user via the HTML template.
 
 ## ▶️ How to Run the Project
 
+The trained pipeline (models/model_pipeline_v2.pkl) is included for demonstration purposes to allow the application to run smoothly after cloning.
+
 ### 1. Clone the repository
 
 ```bash
