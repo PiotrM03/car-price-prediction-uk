@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>UK Car Price Predictor</h1>
+
+            <form id="car-form">
+                <div class="field">
+                <label for="make">Make</label>
+                <select id="make" name="make" required>
+                    <option value="" disabled selected>Select Make</option>
+                    {% for make in makes %}
+                    {% if make in uppercase_brands %}
+                        <!-- FULL CAPS -->
+                        <option value="{{ make }}">{{ make.upper() }}</option>
+            
+                    {% else %}
+                        <!-- Normal formatting: replace underscores + title case -->
+                        <option value="{{ make }}">
+                            {{ make.replace('_', ' ') | title }}
+                        </option>
+                    {% endif %}
+                {% endfor %}
+                </select>
+                </div>
+
+                <div class="field">
+                    <label for="model">Model</label>
+                    <input type="text" id="model" name="model" required>
+                </div>
+
+                <div class="field">
+                    <label for="body_type">Body Type</label>
+                    <select id="body_type" name="body_type" required>
+                        <option value="" disabled selected>Select Body Type</option>
+                        <option value="hatchback">Hatchback</option>
+                        <option value="saloon">Saloon</option>
+                        <option value="suv">SUV</option>
+                        <option value="estate">Estate</option>
+                        <option value="coupe">Coupe</option>
+                        <option value="mpv">MPV</option>
+                        <option value="convertible">Convertible</option>
+                        <option value="pickup">Pickup</option>
+                        <option value="combi_van">Combi Van</option>
+                        <option value="minibus">Minibus</option>
+                        <option value="camper">Camper</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="transmission">Transmission</label>
+                    <select id="transmission" name="transmission" required>
+                        <option value="" disabled selected>Select Transmission</option>
+                        <option value="automatic">Automatic</option>
+                        <option value="manual">Manual</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="fuel_type">Fuel Type</label>
+                    <select id="fuel_type" name="fuel_type" required>
+                        <option value="" disabled selected>Select Fuel Type</option>
+                        <option value="petrol">Petrol</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="petrol_hybrid">Petrol Hybrid</option>
+                        <option value="petrol_plug-in_hybrid">Petrol Plug-in Hybrid</option>
+                        <option value="electric">Electric</option>
+                        <option value="diesel_hybrid">Diesel Hybrid</option>
+                        <option value="diesel_plug-in_hybrid">Diesel Plug-in Hybrid</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="engine_vol">Engine Volume</label>
+                    <input type="number" id="engine_vol" name="engine_vol" min="0.1" step="any" required>
+                </div>
+
+                <div class="field">
+                    <label for="engine_size">Engine Size</label>
+                    <input type="number" id="engine_size" name="engine_size" required>
+                </div>
+                
+                <div class="field">
+                    <label for="miles">Miles</label>
+                    <input type="number" id="miles" name="miles" required>
+                </div>
+                
+                <div class="field">
+                    <label for="age">Car Age</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+
+                <button type="submit">Predict Car Price</button>
+            </form>
+
+            <div id="result"></div>
+        </div>
+    </body>
+</html>

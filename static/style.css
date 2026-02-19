@@ -1,0 +1,87 @@
+/* ====== Global ====== */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* ====== Container Card ====== */
+.container {
+    background: white;
+    margin-top: 50px;
+    padding: 30px 40px;
+    width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* ====== Form Fields ====== */
+.field {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.field label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.field input,
+.field select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: #4a8ff1;
+}
+
+/* ====== Predict Button ====== */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #4a8ff1;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #3a76cc;
+}
+
+/* ====== Prediction Result ====== */
+#result {
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    background: #eef5ff;
+    border: 1px solid #d4e2ff;
+    border-radius: 8px;
+    color: #1c3f91;
+    font-weight: bold;
+}

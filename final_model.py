@@ -78,7 +78,7 @@ def train_and_evaluate(df):
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    numeric_cols = ["miles", "engine_vol", "engine_size"]
+    numeric_cols = ["miles", "engine_vol", "engine_size", "age"]
     categorical_cols = ["model", "make", "body_type", "transmission", "fuel_type"]
 
     preprocessor = build_preprocessor(numeric_cols, categorical_cols)
@@ -104,9 +104,9 @@ def save_model(model, path):
     joblib.dump(model, path)
 
 def main():
-    df = load_data("cars_cleaned.csv")
+    df = load_data("data/processed/cars_cleaned.csv")
     model = train_and_evaluate(df)
-    save_model(model, "models/model_pipeline_v1.pkl")
+    save_model(model, "models/model_pipeline_v2.pkl")
 
 if __name__ == "__main__":
     main()

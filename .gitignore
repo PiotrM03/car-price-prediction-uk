@@ -1,23 +1,67 @@
-Dependency directories
+############################################
+# PYTHON / ENVIRONMENT
+############################################
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
 
 venv/
-pycache/
+.env/
+.venv/
 
-Compiled artifacts
+# OS files
+.DS_Store
+Thumbs.db
 
-*.pyc
 
-Data & Model Files
+############################################
+# JUPYTER NOTEBOOK NOISE
+############################################
 
-CRITICAL: Ignore all raw data files and temporary model dumps
+.ipynb_checkpoints/
 
+
+############################################
+# DATA FILES (RAW + PROCESSED)
+############################################
+
+# Ignore all data inside data/raw and data/processed
+data/raw/**
+data/processed/**
+
+# Keep directory structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Ignore any top-level raw file accidentally placed
 car_adverts.csv
-*.csv
-*.xlsx
-*.parquet
-model_test_data.csv
-model_pipeline.pkl
 
-Jupyter/iPython Notebooks
+# Ignore any CSV/XLSX/Parquet anywhere inside data/
+data/**/*.csv
+data/**/*.xlsx
+data/**/*.parquet
+notebooks/*.csv
 
-.ipynb_checkpoints
+
+############################################
+# MODEL BINARIES / ARTIFACTS
+############################################
+
+models/**
+!models/.gitkeep
+
+*.pkl
+*.joblib
+*.h5
+
+
+############################################
+# LOGS / TEMP FILES
+############################################
+
+logs/
+*.log
+*.tmp
+*.temp
