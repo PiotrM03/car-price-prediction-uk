@@ -56,6 +56,8 @@ models/**
 *.joblib
 *.h5
 
+!models/model_pipeline_v2.pkl
+
 
 ############################################
 # LOGS / TEMP FILES
